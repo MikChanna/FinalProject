@@ -51,7 +51,7 @@ module.exports = {
       console.log("req.user", req.user);
       res.send(req.user);
       // db.User.findOne({ username: req.user.username }, async (err, doc, res) => {
-      //   console.log("userRes", res)
+      //   console.log("userRes", doc)
       // });
     })(req, res);
 

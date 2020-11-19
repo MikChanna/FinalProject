@@ -19,15 +19,17 @@ function ChildData() {
   function loadChildData() {
     API.getChildren()
 
-      .then((res) => setChildData(res.data))
+      .then((res) => {
+        console.log("res.data",res.data);
+        setChildData(res.data)})
 
       .catch((err) => console.log(err));
   }
 
-  function loadUserData() {
+  function loadUserData(doc) {
     userAPI.getUser()
 
-      .then((res) => console.log(res))
+      .then((res) => console.log("res",res.data))
 
       .catch((err) => console.log(err));
   }

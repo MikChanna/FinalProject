@@ -62,6 +62,7 @@ app.use(express.static(path.join(__dirname, "/client/public")));
 // add routes
 app.use(routes);
 
+
 app.get("/sign-s3", (req, res) => {
   console.log("hit GET route");
   const s3 = new aws.S3();
@@ -87,6 +88,10 @@ app.get("/sign-s3", (req, res) => {
     res.write(JSON.stringify(returnData));
     res.end();
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 app.post("/save-details", (req, res) => {

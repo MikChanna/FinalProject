@@ -10,8 +10,11 @@ import AddChild from "./pages/AddChild";
 import EditChild from "./pages/EditChild";
 import Footer from "./components/Footer";
 
+
 function App() {
 
+
+  
 
   return (
     <div className="App">
@@ -23,7 +26,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/" component={Login} />
           <Route exact path="/addchild" component={AddChild} />
-          <Route exact path="/editchild" component={EditChild} />
+          <Route exact path="/child/:id" component={EditChild} />
         <Footer />
       </Router>
     </div>
